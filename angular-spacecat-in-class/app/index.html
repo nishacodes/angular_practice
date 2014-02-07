@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="spacecatApp">
+  <head>
+    <meta charset="utf-8"/>
+    <title>SpaceCAT! AngularJS Demo</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+    <link href="css/app.css" rel="stylesheet"/>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+  <body ng-controller="CatListCtrl">
+    <div class="container-fluid">
+      <div class="billions"></div>
+      <img id="sagan" src="img/sagan.png"/>
+      <div class="jumbo">  
+        <h1>Intergalactic Space Cat Registry</h1>
+      </div>
+      <div class="cat-container container">
+        <!-- <h2> NO CATS YET :((( </h2> -->
+        <ul>
+          <li ng-repeat="cat in cats" class="cat">
+            <img ng-src="img/spacecats/{{cat.name}}.jpg"/>
+            <div class="info">
+              <a href="#/cats/{{cat.id}}">
+                <h3>{{cat.name}}</h3>
+              </a>
+              <p>{{cat.bio}}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
