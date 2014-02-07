@@ -22,7 +22,7 @@
 <body ng-controller="BearListCtrl">
   <input id="search" type="text" ng-model="query"/>
   <select ng-model="orderProp">
-    <option value="-id"> Alphabetical</option>
+    <option value="name"> Alphabetical</option>
   </select>
   <ul>
     <li ng-repeat="bear in bears | filter:query | orderBy:orderProp" class="bear">

@@ -4,21 +4,12 @@
 
 var bearApp = angular.module('bearApp', []);
 
-bearApp.controller('BearListCtrl', function($scope){
-  $scope.bears = [
-    { "id": 1,
-      "name": "Polar Bear",
-      "type": "polar"},
-    { "id": 2,
-      "name": "Grizzly Bear",
-      "type": "grizzly"},
-    { "id": 3,
-      "name": "Panda Bear",
-      "type": "panda"},
-    { "id": 4,
-      "name": "Black Bear",
-      "type": "black"}
-  ]
+bearApp.controller('BearListCtrl', function($scope, $http){
+  $http.get('bears/bears.json').success(function(data){
+    $scope.bears = data;
+  });
+
+  $scope.orderProp = 'name';
 });
 
 // var phonecatControllers = angular.module('phonecatControllers', []);

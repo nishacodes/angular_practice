@@ -1,0 +1,14 @@
+[
+  { "id": 1,
+    "name": "Polar Bear",
+    "type": "polar"},
+  { "id": 2,
+    "name": "Grizzly Bear",
+    "type": "grizzly"},
+  { "id": 3,
+    "name": "Panda Bear",
+    "type": "panda"},
+  { "id": 4,
+    "name": "Black Bear",
+    "type": "black"}
+  ]
