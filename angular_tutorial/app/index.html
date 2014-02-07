@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en" ng-app="phonecatApp">
+<html lang="en" ng-app="bearApp">
 <head>
   <meta charset="utf-8">
-  <title>Google Phone Gallery</title>
+  <title>Bear Gallery</title>
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/animations.css">
@@ -19,11 +19,17 @@
   <script src="js/filters.js"></script>
   <script src="js/services.js"></script>
 </head>
-<body>
-
-  <div class="view-container">
-    <div ng-view class="view-frame"></div>
-  </div>
-
+<body ng-controller="BearListCtrl">
+  <input id="search" type="text" ng-model="query"/>
+  <select ng-model="orderProp">
+    <option value="-id"> Alphabetical</option>
+  </select>
+  <ul>
+    <li ng-repeat="bear in bears | filter:query | orderBy:orderProp" class="bear">
+      <h3>{{bear.name}}</h3>
+      <img ng-src="img/bears/{{bear.type}}.jpeg"/>
+    </li>
+  </ul>
+  
 </body>
 </html>
