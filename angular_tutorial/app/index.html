@@ -24,6 +24,7 @@
   <select ng-model="orderProp">
     <option value="name"> Alphabetical</option>
   </select>
+  
   <ul>
     <li ng-repeat="bear in bears | filter:query | orderBy:orderProp" class="bear">
       <h3>{{bear.name}}</h3>
